@@ -4,7 +4,7 @@ const { Builder, By, Key, until } = require("selenium-webdriver");
 async function googleSearch(browser) {
   let driver = await new Builder()
     .forBrowser(browser)
-    .usingServer("http://localhost:4447/wd/hub/")
+    .usingServer("http://localhost:4444/wd/hub/")
     .build();
 
   try {
@@ -31,5 +31,7 @@ async function googleSearch(browser) {
 googleSearch("chrome");
 googleSearch("firefox");
 googleSearch("MicrosoftEdge");
+googleSearch("chrome");
+googleSearch("chrome");
 
 
