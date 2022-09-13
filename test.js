@@ -4,12 +4,13 @@ const { Builder, By, Key, until } = require("selenium-webdriver");
 (async function googleSearch() {
   let driver = await new Builder()
     .forBrowser("chrome")
-    // .usingServer("http://localhost:4444/wd/hub/")
-    .setChromeService(
-      chrome.setDefaultService(
-        new chrome.ServiceBuilder("./drivers/chromedriver_89").build()
-      )
-    )
+     .usingServer("http://localhost:4444/wd/hub/")
+     
+   // .setChromeService(
+   //   chrome.getDefaultService(
+   //     new chrome.ServiceBuilder("./drivers/chromedriver_89").build()
+  //    )
+  //  )
     .build();
 
   try {
@@ -18,7 +19,7 @@ const { Builder, By, Key, until } = require("selenium-webdriver");
     // Enter text "Automation Bro" and perform keyboard action "Enter"
     await driver
       .findElement(By.name("q"))
-      .sendKeys("Automation Bro", Key.ENTER);
+      .sendKeys("My Dawg the Automation Bro", Key.ENTER);
 
     let firstResult = await driver.wait(
       until.elementLocated(By.css("h3")),
