@@ -28,8 +28,8 @@ async function googleSearch(browser) {
   }
 };
 
-//googleSearch("chrome");
-//googleSearch("firefox");
+googleSearch("chrome");
+googleSearch("firefox");
 googleSearch("MicrosoftEdge");
 
 
